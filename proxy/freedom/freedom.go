@@ -110,6 +110,8 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 	input := link.Reader
 	output := link.Writer
 
+	errors.LogInfo(ctx, "freedom Process()")
+
 	var conn stat.Connection
 	err := retry.ExponentialBackoff(5, 100).On(func() error {
 		dialDest := destination
