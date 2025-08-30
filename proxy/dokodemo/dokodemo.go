@@ -188,7 +188,7 @@ func (d *DokodemoDoor) Process(ctx context.Context, network net.Network, conn st
 	); err != nil {
 		return errors.New("failed to dispatch request").Base(err)
 	}
-	time.Sleep(100 * time.Millisecond)
+	time.Sleep(time.Second)
 	return nil // Unlike Dispatch(), DispatchLink() will not return until the outbound finishes Process()
 }
 
